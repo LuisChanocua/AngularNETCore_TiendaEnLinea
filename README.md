@@ -1,0 +1,1 @@
+Proyeco Web de tienda en lienda usando Angular y como API .NET Core usando capas
