@@ -5,13 +5,13 @@ using Tiendaenlinea.Models;
 
 namespace Tiendaenlinea.DAL.DBContext;
 
-public partial class CursoAngularNetcoreApiTiendaEnLineaContext : DbContext
+public partial class DataBaseContext : DbContext
 {
-    public CursoAngularNetcoreApiTiendaEnLineaContext()
+    public DataBaseContext()
     {
     }
 
-    public CursoAngularNetcoreApiTiendaEnLineaContext(DbContextOptions<CursoAngularNetcoreApiTiendaEnLineaContext> options)
+    public DataBaseContext(DbContextOptions<DataBaseContext> options)
         : base(options)
     {
     }
