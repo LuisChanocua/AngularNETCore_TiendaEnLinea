@@ -12,7 +12,7 @@ namespace Tiendaenlinea.DTO
 
         public string? TipoPago { get; set; }
 
-        public string? FechaPago {  get; set; }  
+        public string? FechaRegistro {  get; set; }  
 
         public string? TotalVenta {  get; set; }
 
