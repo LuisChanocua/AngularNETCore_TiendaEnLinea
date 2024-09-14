@@ -10,6 +10,8 @@ using Tiendaenlinea.DAL.DBContext;
 
 using Tiendaenlinea.DAL.Repositorios.Contratos;
 using Tiendaenlinea.DAL.Repositorios;
+using Tiendaenlinea.Utility;
+using AutoMapper;
 
 namespace Tiendaenlinea.IOC
 {
@@ -24,6 +26,9 @@ namespace Tiendaenlinea.IOC
 
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IVentaRepository, VentaRepository>();
-        } 
+
+            //Dependencia para mapeo de modelos
+            services.AddAutoMapper(typeof(AutoMapperProfile));
+        }
     }
 }
