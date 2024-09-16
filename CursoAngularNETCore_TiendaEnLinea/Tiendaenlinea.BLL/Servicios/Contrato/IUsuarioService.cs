@@ -10,7 +10,7 @@ namespace Tiendaenlinea.BLL.Servicios.Contrato
 {
     public interface IUsuarioService
     {
-        Task<List<UsuarioDTO>> ListaUsuario();
+        Task<List<UsuarioDTO>> GetUsuario();
         Task<SessionDTO> ValidarSessionUsuario(string correo, string password);
         Task<UsuarioDTO> CrearUsuario(UsuarioDTO usuarioDTOModel);
         Task<bool> EditarUsuario(UsuarioDTO usuarioDTOmodel);

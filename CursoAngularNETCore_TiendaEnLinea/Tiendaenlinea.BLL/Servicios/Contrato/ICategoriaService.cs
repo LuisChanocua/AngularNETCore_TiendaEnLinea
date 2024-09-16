@@ -8,8 +8,8 @@ using Tiendaenlinea.DTO;
 
 namespace Tiendaenlinea.BLL.Servicios.Contrato
 {
-    public interface IRolService
+    public interface ICategoriaService
     {
-        Task<List<RolDTO>> GetRol();
+        Task<List<CategoriaDTO>> GetCategorias();
     }
 }

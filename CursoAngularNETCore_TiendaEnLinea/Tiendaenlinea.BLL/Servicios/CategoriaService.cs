@@ -12,23 +12,24 @@ using Tiendaenlinea.Models;
 
 namespace Tiendaenlinea.BLL.Servicios
 {
-    public class RolService : IRolService
+    public class CategoriaService : ICategoriaService
     {
-        private readonly IGenericRepository<Rol> _rolRepository;
+        private readonly IGenericRepository<Categoria> _categoriaRepository;
         private readonly IMapper _mapper;
 
-        public RolService(IGenericRepository<Rol> rolRepository, IMapper mapper)
+        public CategoriaService(IGenericRepository<Categoria> categoriaRepository, IMapper mapper)
         {
-            _rolRepository = rolRepository;
+            _categoriaRepository = categoriaRepository;
             _mapper = mapper;
         }
 
-        public async Task<List<RolDTO>> GetRol()
+        public async Task<List<CategoriaDTO>> GetCategorias()
         {
             try
             {
-                var listaRoles = await _rolRepository.Get();
-                return _mapper.Map<List<RolDTO>>(listaRoles.ToList());
+                var listaCategorias = await _categoriaRepository.Get();
+                return _mapper.Map<List<CategoriaDTO>>(listaCategorias.ToList());
+
             }catch (Exception ex)
             {
                 throw;

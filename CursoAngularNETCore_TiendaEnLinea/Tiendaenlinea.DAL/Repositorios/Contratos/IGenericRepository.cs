@@ -11,6 +11,7 @@ namespace Tiendaenlinea.DAL.Repositorios.Contratos
 {
     public interface IGenericRepository<TModel> where TModel : class
     {
+        //Obtener
         Task<TModel> GetAll(Expression<Func<TModel, bool>> filtro);
 
         Task<TModel> Create(TModel model);
@@ -19,6 +20,7 @@ namespace Tiendaenlinea.DAL.Repositorios.Contratos
 
         Task<bool> Delete(TModel model);
 
+        //Consultar
         Task<IQueryable<TModel>> Get(Expression<Func<TModel, bool>> filtro = null);
     }
 }

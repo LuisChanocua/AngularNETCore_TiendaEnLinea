@@ -25,11 +25,10 @@ namespace Tiendaenlinea.BLL.Servicios
             _mapper = mapper;
         }
 
-        public async Task<List<UsuarioDTO>> ListaUsuario()
+        public async Task<List<UsuarioDTO>> GetUsuario()
         {
             try
             {
-
                 var queryUsuario = await _usuarioRepository.Get();
                 var listaUsuario = queryUsuario.Include(r=> r.IdRolNavigation).ToList();
 
