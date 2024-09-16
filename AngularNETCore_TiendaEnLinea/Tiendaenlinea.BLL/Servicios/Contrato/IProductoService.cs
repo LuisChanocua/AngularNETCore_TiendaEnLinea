@@ -8,7 +8,7 @@ using Tiendaenlinea.DTO;
 
 namespace Tiendaenlinea.BLL.Servicios.Contrato
 {
-    public interface IProducto
+    public interface IProductoService
     {
         Task<List<ProductoDTO>> GetProductos();
         Task<ProductoDTO> CrearProducto(ProductoDTO productoDTOModel);

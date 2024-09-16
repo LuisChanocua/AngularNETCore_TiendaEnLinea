@@ -13,7 +13,7 @@ using Tiendaenlinea.Models;
 
 namespace Tiendaenlinea.BLL.Servicios
 {
-    public class ProductoService : IProducto
+    public class ProductoService : IProductoService
     {
         private readonly IGenericRepository<Producto> _productoRepository;
         private readonly IMapper _mapper;
