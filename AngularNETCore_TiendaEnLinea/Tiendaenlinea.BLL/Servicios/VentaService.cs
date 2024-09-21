@@ -13,7 +13,7 @@ using Tiendaenlinea.Models;
 
 namespace Tiendaenlinea.BLL.Servicios
 {
-    internal class VentaService : IVentaService
+    public class VentaService : IVentaService
     {
 
         private readonly IVentaRepository _ventaRepository;

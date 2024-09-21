@@ -12,6 +12,8 @@ using Tiendaenlinea.DAL.Repositorios.Contratos;
 using Tiendaenlinea.DAL.Repositorios;
 using Tiendaenlinea.Utility;
 using AutoMapper;
+using Tiendaenlinea.BLL.Servicios.Contrato;
+using Tiendaenlinea.BLL.Servicios;
 
 namespace Tiendaenlinea.IOC
 {
@@ -29,6 +31,16 @@ namespace Tiendaenlinea.IOC
 
             //Dependencia para mapeo de modelos
             services.AddAutoMapper(typeof(AutoMapperProfile));
+
+
+            /*Servicios*/
+            services.AddScoped<IRolService,  RolService>();
+            services.AddScoped<IUsuarioService,  UsuarioService>();
+            services.AddScoped<ICategoriaService,  CategoriaService>();
+            services.AddScoped<IProductoService,  ProductoService>();
+            services.AddScoped<IVentaService,  VentaService>();
+            services.AddScoped<IDashboardService,  DashboardService>();
+            services.AddScoped<IMenuService,  MenuService>();
         }
     }
 }
