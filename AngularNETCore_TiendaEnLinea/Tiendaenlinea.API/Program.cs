@@ -11,6 +11,18 @@ builder.Services.AddSwaggerGen();
 //Extension de la DB conection
 builder.Services.InyectarDependencias(builder.Configuration);
 
+builder.Services.AddCors(
+    o =>
+    {
+        o.AddPolicy("CorsPolytic", p =>
+        {
+            p.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+        });
+    }
+    );
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -21,9 +33,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("CorsPolytic");
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

@@ -20,9 +20,9 @@ namespace Tiendaenlinea.BLL.Servicios
         private readonly IGenericRepository<Menu> _menuRepository;
         private readonly IMapper _mapper;
 
-        public MenuService(IGenericRepository<Usuario> usuarioRepository, 
-            IGenericRepository<MenuRol> menuRolRepository, 
-            IGenericRepository<Menu> menuRepository, 
+        public MenuService(IGenericRepository<Usuario> usuarioRepository,
+            IGenericRepository<MenuRol> menuRolRepository,
+            IGenericRepository<Menu> menuRepository,
             IMapper mapper)
         {
             _usuarioRepository = usuarioRepository;
@@ -33,7 +33,7 @@ namespace Tiendaenlinea.BLL.Servicios
 
         public async Task<List<MenuDTO>> GetMenu(int idUsuario)
         {
-            IQueryable<Usuario> listaUsuario = await _usuarioRepository.Get(x=>x.IdUsuario == idUsuario);
+            IQueryable<Usuario> listaUsuario = await _usuarioRepository.Get(x => x.IdUsuario == idUsuario);
             IQueryable<MenuRol> listamenuRol = await _menuRolRepository.Get();
             IQueryable<Menu> menu = await _menuRepository.Get();
 
@@ -46,7 +46,8 @@ namespace Tiendaenlinea.BLL.Servicios
 
                 var listaMenus = listaMenuResultado.ToList();
                 return _mapper.Map<List<MenuDTO>>(listaMenus);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw;
             }
